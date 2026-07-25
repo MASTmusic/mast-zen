@@ -1,12 +1,1 @@
-const header=document.querySelector('.site-header');
-addEventListener('scroll',()=>header?.classList.toggle('scrolled',scrollY>24));
-const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.main-nav');
-toggle?.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',open)});
-nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.06,rootMargin:'0px 0px -4%'});
-document.querySelectorAll('.reveal,.reveal-left').forEach((el,i)=>{el.style.transitionDelay=`${Math.min((i%3)*85,170)}ms`;io.observe(el)});
-document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
-const lightbox=document.querySelector('.lightbox');
-document.querySelectorAll('[data-lightbox],[data-full]').forEach(b=>b.addEventListener('click',()=>{const src=b.dataset.lightbox||b.dataset.full;if(lightbox&&src){lightbox.querySelector('img').src=src;lightbox.showModal()}}));
-lightbox?.querySelector('button')?.addEventListener('click',()=>lightbox.close());
-lightbox?.addEventListener('click',e=>{if(e.target===lightbox)lightbox.close()});
+const header=document.querySelector('.site-header');addEventListener('scroll',()=>header?.classList.toggle('scrolled',scrollY>30));const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.main-nav');toggle?.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',open)});nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.08,rootMargin:'0px 0px -5%'});document.querySelectorAll('.reveal,.reveal-left').forEach((el,i)=>{el.style.transitionDelay=`${Math.min((i%4)*70,210)}ms`;io.observe(el)});document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());const lightbox=document.querySelector('.lightbox');document.querySelectorAll('[data-lightbox]').forEach(b=>b.addEventListener('click',()=>{lightbox.querySelector('img').src=b.dataset.lightbox;lightbox.showModal()}));lightbox?.querySelector('button')?.addEventListener('click',()=>lightbox.close());lightbox?.addEventListener('click',e=>{if(e.target===lightbox)lightbox.close()});

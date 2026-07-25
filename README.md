@@ -1,9 +1,5 @@
-# MAST — Zen Edition
+# MAST Studio Edition
 
-An alternate, handcrafted visual direction for the complete MAST website. It retains all pages, album subpages, biographies, credits, videos, press, photography, contact details and discography from MAST 2.5 while introducing a brighter, warmer, more contemplative design.
+A handcrafted alternate GitHub Pages site for MAST. Upload the files in this folder to the root of a separate GitHub repository and enable Pages from the main branch.
 
-## Preview locally
-Open `index.html` in a browser, or serve the folder with a simple local web server.
-
-## GitHub Pages
-Upload the contents of this folder to a separate test repository or branch so it can be compared with MAST 2.5 without replacing the current site.
+The project retains the complete content and page structure of MAST 2.5 while using a new editorial, asymmetrical visual system.
